@@ -14,7 +14,7 @@ stages{
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/PosamNarmada/register-app.git'
                 }
         }
 
@@ -33,7 +33,7 @@ stages{
     stage("SonarQube Analysis"){
            steps {
 	           script {
-		        withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') { 
+		        withSonarQubeEnv(credentialsId: 'jenkin-sonarqube-token') { 
                         sh "mvn sonar:sonar"
 		        }
 	           }	
